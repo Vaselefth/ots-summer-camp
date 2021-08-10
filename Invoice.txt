@@ -32,6 +32,7 @@ public class Invoice {
     @JoinColumn(name="transactor_id", referencedColumnName = "id")
     private Trasactor trasactor;
 
+    @OneToMany(mappedBy="invoice", cascade = CascadeType.ALL)
     private List<InvoiceDetail> invoiceDetails;
 
     public Invoice(Date dateCreated, String invoiceDescription, double totalAmount, InvoiceType invoiceType, User user, Trasactor trasactor, List<InvoiceDetail> invoiceDetails) {
