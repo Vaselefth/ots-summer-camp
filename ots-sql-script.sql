@@ -79,7 +79,7 @@ CREATE TABLE `product_service` (
 	`discount` double(4,2) NOT NULL,
 	`is_product` tinyint(1) NOT NULL,
 	`vat_id` bigint(10) NOT NULL,
-	PRIMARY KEY(`product_id`),
+	PRIMARY KEY(`id`),
 	CONSTRAINT `fk_vat_id` FOREIGN KEY(`vat_id`) REFERENCES `vat`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
