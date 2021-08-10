@@ -1,5 +1,3 @@
-package com.testOTS.demo.demo.entity;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -10,7 +8,7 @@ public class Vat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private int id;
+    private long id;
 
     @Column(name="vat_value")
     private double vatValue;
@@ -30,11 +28,11 @@ public class Vat {
         this.vatDescription = vatDescription;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
