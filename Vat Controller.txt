@@ -1,0 +1,69 @@
+@RestController
+@RequestMapping("/api")
+public class VatRestController {
+
+    private VatService vatService;
+
+    @Autowired
+    public VatRestController(VatService vatService) {
+        this.vatService = vatService;
+    }
+
+    @GetMapping("/vats")
+    public List<Vat> findAll() {
+        return vatService.findAll();
+    }
+
+    @GetMapping("/vats/{vatId}")
+    public Vat getVat(@PathVariable long vatId) {
+
+        Vat vat = vatService.findById(vatId);
+
+        if(vat == null) {
+            throw new RuntimeException("Vat Id not found"+ vatId);
+        }
+
+        return vat;
+    }
+
+    @PostMapping("/vats")
+    public Vat addVat(@RequestBody Vat vat) {
+
+        // also just in case they pass an id in JSON ... set id to 0
+        // this is to force a save of new item ... instead of update
+
+        vat.setId(0);
+
+        vatService.save(vat);
+
+        return vat;
+    }
+
+    // add mapping for PUT /employees - update existing employee
+
+    @PutMapping("/vats")
+    public Vat updateVat(@RequestBody Vat vat) {
+
+        vatService.save(vat);
+
+        return vat;
+    }
+
+    // add mapping for DELETE /employees/{employeeId} - delete employee
+
+    @DeleteMapping("/vats/{vatId}")
+    public String deleteVat(@PathVariable long vatId) {
+
+        Vat vat = vatService.findById(vatId);
+
+        // throw exception if null
+
+        if (vat == null) {
+            throw new RuntimeException("Employee id not found - " +vatId);
+        }
+
+        vatService.deleteById(vatId);
+
+        return "Deleted employee id - " + vatId;
+    }
+}
