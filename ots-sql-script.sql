@@ -16,7 +16,7 @@ CREATE TABLE `user` (
 
 CREATE TABLE `invoice_type` (
 	`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-	`description` text(250) NOT NULL,
+	`invoice_type_description` text(250) NOT NULL,
 	`type` varchar(40) NOT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -47,7 +47,7 @@ CREATE TABLE `transactor` (
 CREATE TABLE `invoice` (
 	`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 	`date_created` datetime NOT NULL,
-	`description` text(250) NOT NULL,
+	`invoice_description` text(250) NOT NULL,
 	`total_amount` double(10,2) NOT NULL,
 	`invoice_type_id` bigint(20) unsigned NOT NULL,
 	`user_id` bigint(20) unsigned NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE `vat` (
 	`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 	`vat_value` double(3,2) NOT NULL,
 	`valid_date` datetime NOT NULL,
-	`description` varchar(30) NOT NULL,
+	`vat_description` varchar(30) NOT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -74,7 +74,7 @@ CREATE TABLE `vat` (
 
 CREATE TABLE `product_service` (
 	`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-	`description` text(200) NOT NULL,
+	`product_description` text(200) NOT NULL,
 	`price_per_item` double(10,2) NOT NULL,
 	`discount` double(4,2) NOT NULL,
 	`is_product` tinyint(1) NOT NULL,
