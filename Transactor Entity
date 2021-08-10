@@ -1,7 +1,7 @@
 package com.testOTS.demo.demo.entity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="transactor")
@@ -43,6 +43,9 @@ public class Transactor{
 
     @Column(name="is_abroad")
     private boolean isAbroad;
+    
+    @OneToMany(mappedBy="invoice")
+    private List<Invoice> invoices;
 
     //Empty constructor
     public Transactor() {
@@ -50,7 +53,7 @@ public class Transactor{
     }
 
     //Constructor without id
-    public Transactor(String lastName, String companyName, String email, long tin, String doy, String address, String city, String phoneNumber, String postalCode, boolean transactorType, boolean isAbroad) {
+    public Transactor(String lastName, String companyName, String email, long tin, String doy, String address, String city, String phoneNumber, String postalCode, boolean transactorType, boolean isAbroad, List<Invoice> invoices) {
         this.lastName = lastName;
         this.companyName = companyName;
         this.email = email;
@@ -62,6 +65,7 @@ public class Transactor{
         this.postalCode = postalCode;
         this.transactorType = transactorType;
         this.isAbroad = isAbroad;
+        this.invoices = invoices;
     }
 
     //Getters and Setters
@@ -161,6 +165,14 @@ public class Transactor{
 
     public void setAbroad(boolean abroad) {
         isAbroad = abroad;
+    }
+    
+    public List<Invoice> getInvoices() {
+        return invoices;
+    }
+
+    public void setInvoices(List<Invoice> invoices) {
+        this.invoices = invoices;
     }
 
     //toString Method
