@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="transactors")
-public class Transactors{
+@Table(name="transactor")
+public class Transactor{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -50,7 +50,7 @@ public class Transactors{
     }
 
     //Constructor without id
-    public Transactors(String lastName, String companyName, String email, long tin, String doy, String address, String city, String phoneNumber, String postalCode, boolean transactorType, boolean isAbroad) {
+    public Transactor(String lastName, String companyName, String email, long tin, String doy, String address, String city, String phoneNumber, String postalCode, boolean transactorType, boolean isAbroad) {
         this.lastName = lastName;
         this.companyName = companyName;
         this.email = email;
@@ -166,7 +166,7 @@ public class Transactors{
     //toString Method
     @Override
     public String toString() {
-        return "Transactors{" +
+        return "Transactor{" +
                 "id=" + id +
                 ", lastName='" + lastName + '\'' +
                 ", companyName='" + companyName + '\'' +
