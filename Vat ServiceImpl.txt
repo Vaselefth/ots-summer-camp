@@ -1,0 +1,41 @@
+@Service
+public class VatServiceImpl implements VatService {
+
+    private VatRepository vatRepository;
+
+    @Autowired
+    public VatServiceImpl(VatRepository vatRepository) {
+        this.vatRepository = vatRepository;
+    }
+
+    @Override
+    public List<Vat> findAll() {
+        return vatRepository.findAll();
+    }
+
+    @Override
+    public Vat findById(long theId) {
+        Optional<Vat> result = vatRepository.findById(theId);
+
+        Vat vat = null;
+
+        if(result.isPresent()) {
+            vat = result.get();
+        }
+        else {
+            throw new RuntimeException("Did not found that vatId");
+        }
+
+        return vat;
+    }
+
+    @Override
+    public void save(Vat vat) {
+        vatRepository.save(vat);
+    }
+
+    @Override
+    public void deleteById(long theId) {
+        vatRepository.deleteById(theId);
+    }
+}
