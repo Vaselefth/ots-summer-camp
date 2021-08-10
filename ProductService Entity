@@ -7,7 +7,7 @@ public class ProductService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private int id;
+    private long id;
 
     @Column(name = "product_description")
     private String productDesctription;
@@ -22,7 +22,7 @@ public class ProductService {
     private boolean isProduct;
 
     @ManyToOne
-    @JoinColumn(name = "vat_id", referendColumnName = "id")
+    @JoinColumn(name = "vat_id", referencedColumnName  = "id")
     private Vat vat;
 
     public ProductService() {
