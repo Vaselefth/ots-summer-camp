@@ -1,0 +1,14 @@
+public interface VatService {
+
+    public List<Vat> findAll();
+
+    public Vat findById(long theId);
+
+    public void save(Vat vat);
+
+    public void deleteById(int theId);
+}
+
+public interface VatRepository extends JpaRepository<Vat, Long> {
+
+}
