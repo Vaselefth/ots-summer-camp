@@ -45,7 +45,7 @@ public class Transactor{
     private boolean isAbroad;
 
     //Empty constructor
-    public Transactors() {
+    public Transactor() {
 
     }
 
