@@ -39,7 +39,7 @@ public class InvoiceRestController {
         return invoice;
     }
 
-    // add mapping for PUT /employees - update existing employee
+    // add mapping for PUT /invoices - update existing invoices
 
     @PutMapping("/invoices")
     public Invoice updateInvoice(@RequestBody Invoice invoice) {
@@ -49,7 +49,7 @@ public class InvoiceRestController {
         return invoice;
     }
 
-    // add mapping for DELETE /employees/{employeeId} - delete employee
+    // add mapping for DELETE /invoices/{invoiceId} - delete invoice
 
     @DeleteMapping("/invoices/{invoiceId}")
     public String deleteInvoice(@PathVariable long invoiceId) {
