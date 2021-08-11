@@ -9,6 +9,4 @@ public interface VatService {
     public void deleteById(long theId);
 }
 
-public interface VatRepository extends JpaRepository<Vat, Long> {
 
-}
