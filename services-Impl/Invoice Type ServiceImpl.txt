@@ -1,0 +1,41 @@
+@Service
+public class InvoiceTypeImpl implements InvoiceTypeService {
+
+    private InvoiceTypeRepository invoiceTypeRepository;
+
+    @Autowired
+    public InvoiceTypeImpl(InvoiceTypeRepository invoiceTypeRepository) {
+        this.invoiceTypeRepository = invoiceTypeRepository;
+    }
+
+    @Override
+    public List<InvoiceType> findAll() {
+        return invoiceTypeRepository.findAll();
+    }
+
+    @Override
+    public InvoiceType findById(long theId) {
+        Optional<InvoiceType> result = invoiceTypeRepository.findById(theId);
+
+        InvoiceType invoiceType = null;
+
+        if(result.isPresent()) {
+            invoiceType = result.get();
+        }
+        else {
+            throw new RuntimeException("Did not found that vatId");
+        }
+
+        return invoiceType;
+    }
+
+    @Override
+    public void save(InvoiceType invoiceType) {
+        invoiceTypeRepository.save(invoiceType);
+    }
+
+    @Override
+    public void deleteById(long theId) {
+        invoiceTypeRepository.deleteById(theId);
+    }
+}
