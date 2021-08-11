@@ -23,7 +23,7 @@ public class VatServiceImpl implements VatService {
             vat = result.get();
         }
         else {
-            throw new RuntimeException("Did not found that vatId");
+            throw new RuntimeException("Did not found that vatId"+ theId);
         }
 
         return vat;
