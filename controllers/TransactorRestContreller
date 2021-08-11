@@ -6,7 +6,7 @@ public class TransactorRestController {
 	
 	@Autowired
 	public TransactorRestController(TransactorService theTransactorService) {
-		transactorService = theTransactorService;
+		this.transactorService = transactorService;
 	}
 	
 	// expose "/employees" and return list of employees
@@ -18,7 +18,7 @@ public class TransactorRestController {
 	// add mapping for GET /employees/{employeeId}
 	
 	@GetMapping("/transactors/{transactorId}")
-	public Transactor getTransactor(@PathVariable int transactorId) {
+	public Transactor getTransactor(@PathVariable long transactorId) {
 		
 		Transactor theTransactor = transactorService.findById(transactorId);
 		
@@ -57,7 +57,7 @@ public class TransactorRestController {
 	// add mapping for DELETE /employees/{employeeId} - delete employee
 	
 	@DeleteMapping("/transactors/{transactorId}")
-	public String deleteTransactor(@PathVariable int transactorId) {
+	public String deleteTransactor(@PathVariable long transactorId) {
 		
 		Transactor tempTransactor = transactorService.findById(transactorId);
 		
