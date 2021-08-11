@@ -1,0 +1,3 @@
+public interface TransactorRepository extends JpaRepository<Transactor, Long> {
+
+}
