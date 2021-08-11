@@ -6,7 +6,7 @@ public class TransactorRestController {
 	
 	@Autowired
 	public TransactorRestController(TransactorService theTransactorService) {
-		transactorService = theEmployeeService;
+		transactorService = theTransactorService;
 	}
 	
 	// expose "/employees" and return list of employees
