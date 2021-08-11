@@ -5,7 +5,7 @@ public class InvoiceImpl implements InvoiceService {
 
     @Autowired
     public InvoiceImpl(InvoiceRepository invoiceRepository) {
-        this.InvoiceRepository = invoiceRepository;
+        this.invoiceRepository = invoiceRepository;
     }
 
     @Override
@@ -23,7 +23,7 @@ public class InvoiceImpl implements InvoiceService {
             invoice = result.get();
         }
         else {
-            throw new RuntimeException("Did not found that vatId");
+            throw new RuntimeException("Did not found that invoiceId" + theId);
         }
 
         return invoice;
