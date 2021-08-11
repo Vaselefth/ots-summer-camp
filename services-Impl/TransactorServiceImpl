@@ -1,0 +1,41 @@
+@Service
+public class TransactorServiceImpl implements TransactorService {
+
+    private TransactorRepository transactorRepository;
+
+    @Autowired
+    public TransactorServiceImpl(TransactorRepository transactorRepository) {
+        this.transactorRepository = transactorRepository;
+    }
+
+    @Override
+    public List<Transactor> findAll() {
+        return transactorRepository.findAll();
+    }
+
+    @Override
+    public Transactor findById(long theId) {
+        Optional<Transactor> result = transactorRepository.findById(theId);
+
+        Transactor transactor = null;
+
+        if(result.isPresent()) {
+            transactor = result.get();
+        }
+        else {
+            throw new RuntimeException("Did not found that transactorId"+ theId);
+        }
+
+        return transactor;
+    }
+
+    @Override
+    public void save(Transactor transactor) {
+        transactorRepository.save(transactor);
+    }
+
+    @Override
+    public void deleteById(long theId) {
+        transactorRepository.deleteById(theId);
+    }
+}
