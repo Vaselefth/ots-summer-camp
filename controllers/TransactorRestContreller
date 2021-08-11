@@ -5,7 +5,7 @@ public class TransactorRestController {
 	private TransactorService transactorService;
 	
 	@Autowired
-	public TransactorRestController(TransactorService theTransactorService) {
+	public TransactorRestController(TransactorService transactorService) {
 		this.transactorService = transactorService;
 	}
 	
