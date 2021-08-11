@@ -1,0 +1,45 @@
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class InvoiceDetailServiceImpl implements InvoiceDetailService{
+
+    private InvoiceDetailRepository invoiceDetailRepository;
+
+    @Autowired
+    public InvoiceDetailServiceImpl(InvoiceDetailRepository invoiceDetailRepository) {
+        this.invoiceDetailRepository = invoiceDetailRepository;
+    }
+
+    @Override
+    public List<InvoiceDetail> findAll() {
+        return InvoiceDetailRepository.findAll();
+    }
+
+    @Override
+    public InvoiceDetail findById(long theId) {
+        Optional<InvoiceDetail> result = InvoiceDetailRepository.findById(theId);
+
+        InvoiceDetail theInvoiceDetail = null;
+
+        if (result.isPresent()) {
+            theInvoiceDetail = result.get();
+        }
+        else {
+            // we didn't find the employee
+            throw new RuntimeException("Did not find invoice detail id - " + theId);
+        }
+
+        return theInvoiceDetail;
+    }
+
+    @Override
+    public void save(InvoiceDetail theInvoiceDetail) {
+        InvoiceDetailRepository.save(theInvoiceDetail);
+    }
+
+    @Override
+    public void deleteById(long theId) {
+        invoiceDetailRepository.deleteById(theId);
+    }
+}
