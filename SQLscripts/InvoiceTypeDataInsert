@@ -1,6 +1,4 @@
 insert into ots_summer_camp.invoice_type (invoice_type_description,type)
-values ('Return Products','Credit');
-insert into ots_summer_camp.invoice_type (invoice_type_description,type)
-values ('Purchase - Sale','Purchase - Sale');
-insert into ots_summer_camp.invoice_type (invoice_type_description,type)
-values ('Services','Services');
+values  ('Return Products', 'Credit'),
+        ('Purchase - Sale', 'Purchase - Sale'),
+        ('Services', 'Services');
