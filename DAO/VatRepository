@@ -1,0 +1,3 @@
+public interface VatRepository extends JpaRepository<Vat, Long> {
+
+}
