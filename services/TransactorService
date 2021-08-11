@@ -12,6 +12,6 @@ public interface TransactorService {
 	
 	public void save(Transactor theTransactor);
 	
-	public void deleteById(int theId);
+	public void deleteById(long theId);
 	
 }
