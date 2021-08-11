@@ -1,17 +1,7 @@
 insert into ots_summer_camp.user (username, password, role)
-values ('user', 'user','User');
-
-insert into ots_summer_camp.user (username, password, role)
-values ('admin', 'admin','Admin');
-
-insert into ots_summer_camp.user (username, password, role)
-values ('Vasilis', '0000','User');
-
-insert into ots_summer_camp.user (username, password, role)
-values ('Elena','1234','Admin');
-
-insert into ots_summer_camp.user (username, password, role)
-values ('Dimitris','4321','User');
-
-insert into ots_summer_camp.user (username, password, role)
-values ('Giorgos','4444','Admin');
+values  ('user', 'user', 'User'),
+        ('admin', 'admin', 'Admin'),
+        ('Vasilis', '0000','User'),
+        ('Elena','1234','Admin'),
+        ('Dimitris','4321','User'),
+        ('Giorgos','4444','Admin');
