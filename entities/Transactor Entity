@@ -44,7 +44,7 @@ public class Transactor{
     @Column(name="is_abroad")
     private boolean isAbroad;
     
-    @OneToMany(mappedBy="invoice")
+    @OneToMany(mappedBy="transactor")
     private List<Invoice> invoices;
 
     //Empty constructor
