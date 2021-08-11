@@ -26,8 +26,6 @@ public class Vat {
     @Column(name="vat_description")
     private String vatDescription;
 
-    private String kappa;
-
     public Vat() {
     }
 
