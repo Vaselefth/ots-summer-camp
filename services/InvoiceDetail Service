@@ -1,0 +1,12 @@
+import java.util.List;
+
+public interface InvoiceDetailService {
+
+    public List<InvoiceDetail> findAll();
+
+    public InvoiceDetail findById(long theId);
+
+    public void save(InvoiceDetail invoiceDetail);
+
+    public void deleteById(long theId);
+}
