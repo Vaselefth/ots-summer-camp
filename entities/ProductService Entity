@@ -10,7 +10,7 @@ public class ProductService {
     private long id;
 
     @Column(name = "product_description")
-    private String productDesctription;
+    private String productDescription;
 
     @Column(name = "price_perItem")
     private String pricePerItem;
@@ -28,28 +28,28 @@ public class ProductService {
     public ProductService() {
     }
 
-    public ProductService(String productDesctription, String pricePerItem, String discount, boolean isProduct, Vat vat) {
-        this.productDesctription = productDesctription;
+    public ProductService(String productDescription, String pricePerItem, String discount, boolean isProduct, Vat vat) {
+        this.productDescription = productDescription;
         this.pricePerItem = pricePerItem;
         this.discount = discount;
         this.isProduct = isProduct;
         this.vat = vat;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getProductDesctription() {
-        return productDesctription;
+    public String getProductDescription() {
+        return productDescription;
     }
 
-    public void setProductDesctription(String productDesctription) {
-        this.productDesctription = productDesctription;
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
     public String getPricePerItem() {
@@ -86,9 +86,9 @@ public class ProductService {
 
     @Override
     public String toString() {
-        return "ProjuctService{" +
+        return "ProductService{" +
                 "id=" + id +
-                ", productDesctription='" + productDesctription + '\'' +
+                ", productDescription='" + productDescription + '\'' +
                 ", pricePerItem='" + pricePerItem + '\'' +
                 ", discount='" + discount + '\'' +
                 ", isProduct=" + isProduct +
