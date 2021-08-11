@@ -50,11 +50,11 @@ public class VatRestController {
         Vat vat = vatService.findById(vatId);
 
         if (vat == null) {
-            throw new RuntimeException("Employee id not found - " +vatId);
+            throw new RuntimeException("Vatf id not found - " +vatId);
         }
 
         vatService.deleteById(vatId);
 
-        return "Deleted employee id - " + vatId;
+        return "Deleted vat id - " + vatId;
     }
 }
