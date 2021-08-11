@@ -9,13 +9,13 @@ public class TransactorRestController {
 		this.transactorService = transactorService;
 	}
 	
-	// expose "/employees" and return list of employees
+	// expose "/transactors" and return list of transactors
 	@GetMapping("/transactors")
 	public List<Transactor> findAll() {
 		return transactorService.findAll();
 	}
 
-	// add mapping for GET /employees/{employeeId}
+	// add mapping for GET /transactors/{transactorId}
 	
 	@GetMapping("/transactors/{transactorId}")
 	public Transactor getTransactor(@PathVariable long transactorId) {
@@ -29,7 +29,7 @@ public class TransactorRestController {
 		return theTransactor;
 	}
 	
-	// add mapping for POST /employees - add new employee
+	// add mapping for POST /transactors - add new transactor
 	
 	@PostMapping("/transactors")
 	public Transactor addTransactor(@RequestBody Transactor theTransactor) {
@@ -44,17 +44,17 @@ public class TransactorRestController {
 		return theTransactor;
 	}
 	
-	// add mapping for PUT /employees - update existing employee
+	// add mapping for PUT /transactors - update existing transactor
 	
 	@PutMapping("/transactors")
-	public Employee updateEmployee(@RequestBody Employee theEmployee) {
+	public Transactor updateTransactor(@RequestBody Transactor theTransactor) {
 		
 		transactorService.save(theTransactor);
 		
 		return theTransactor;
 	}
 	
-	// add mapping for DELETE /employees/{employeeId} - delete employee
+	// add mapping for DELETE /transactors/{transactorId} - delete transactor
 	
 	@DeleteMapping("/transactors/{transactorId}")
 	public String deleteTransactor(@PathVariable long transactorId) {
