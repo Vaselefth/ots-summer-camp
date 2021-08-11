@@ -23,7 +23,7 @@ public class InvoiceTypeImpl implements InvoiceTypeService {
             invoiceType = result.get();
         }
         else {
-            throw new RuntimeException("Did not found that vatId");
+            throw new RuntimeException("Did not found that invoicetypeID" + theId);
         }
 
         return invoiceType;
