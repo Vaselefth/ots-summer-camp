@@ -8,7 +8,7 @@ public interface TransactorService {
 
 	public List<Transactor> findAll();
 	
-	public Transactor findById(int theId);
+	public Transactor findById(long theId);
 	
 	public void save(Transactor theTransactor);
 	
