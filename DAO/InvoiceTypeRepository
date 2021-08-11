@@ -1,0 +1,3 @@
+public interface InvoiceTypeRepository extends JpaRepository<InvoiceType, Long> {
+
+}
