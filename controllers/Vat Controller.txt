@@ -29,17 +29,12 @@ public class VatRestController {
     @PostMapping("/vats")
     public Vat addVat(@RequestBody Vat vat) {
 
-        // also just in case they pass an id in JSON ... set id to 0
-        // this is to force a save of new item ... instead of update
-
         vat.setId(0);
 
         vatService.save(vat);
 
         return vat;
     }
-
-    // add mapping for PUT /employees - update existing employee
 
     @PutMapping("/vats")
     public Vat updateVat(@RequestBody Vat vat) {
@@ -49,14 +44,10 @@ public class VatRestController {
         return vat;
     }
 
-    // add mapping for DELETE /employees/{employeeId} - delete employee
-
     @DeleteMapping("/vats/{vatId}")
     public String deleteVat(@PathVariable long vatId) {
 
         Vat vat = vatService.findById(vatId);
-
-        // throw exception if null
 
         if (vat == null) {
             throw new RuntimeException("Employee id not found - " +vatId);
