@@ -1,3 +1,5 @@
+package com.testOTS.demo.demo.entity;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -30,18 +32,18 @@ public class Invoice {
 
     @ManyToOne
     @JoinColumn(name="transactor_id", referencedColumnName = "id")
-    private Trasactor trasactor;
+    private Transactor transactor;
 
     @OneToMany(mappedBy="invoice", cascade = CascadeType.ALL)
     private List<InvoiceDetail> invoiceDetails;
 
-    public Invoice(Date dateCreated, String invoiceDescription, double totalAmount, InvoiceType invoiceType, User user, Trasactor trasactor, List<InvoiceDetail> invoiceDetails) {
+    public Invoice(Date dateCreated, String invoiceDescription, double totalAmount, InvoiceType invoiceType, User user, Transactor transactor, List<InvoiceDetail> invoiceDetails) {
         this.dateCreated = dateCreated;
         this.invoiceDescription = invoiceDescription;
         this.totalAmount = totalAmount;
         this.invoiceType = invoiceType;
         this.user = user;
-        this.trasactor = trasactor;
+        this.transactor = transactor;
         this.invoiceDetails = invoiceDetails;
     }
 
@@ -93,12 +95,12 @@ public class Invoice {
         this.user = user;
     }
 
-    public Trasactor getTrasactor() {
-        return trasactor;
+    public Transactor getTransactor() {
+        return transactor;
     }
 
-    public void setTrasactor(Trasactor trasactor) {
-        this.trasactor = trasactor;
+    public void setTransactor(Transactor transactor) {
+        this.transactor = transactor;
     }
 
     public List<InvoiceDetail> getInvoiceDetails() {
@@ -107,5 +109,19 @@ public class Invoice {
 
     public void setInvoiceDetails(List<InvoiceDetail> invoiceDetails) {
         this.invoiceDetails = invoiceDetails;
+    }
+
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "id=" + id +
+                ", dateCreated=" + dateCreated +
+                ", invoiceDescription='" + invoiceDescription + '\'' +
+                ", totalAmount=" + totalAmount +
+                ", invoiceType=" + invoiceType +
+                ", user=" + user +
+                ", transactor=" + transactor +
+                ", invoiceDetails=" + invoiceDetails +
+                '}';
     }
 }
