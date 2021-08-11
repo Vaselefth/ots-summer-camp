@@ -9,7 +9,5 @@ public interface InvoiceTypeService {
     public void deleteById(long theId);
 }
 
-public interface InvoiceTypeRepository extends JpaRepository<InvoiceType, Long> {
 
-}
 
