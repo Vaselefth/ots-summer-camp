@@ -13,10 +13,10 @@ public class ProductService {
     private String productDescription;
 
     @Column(name = "price_perItem")
-    private String pricePerItem;
+    private double pricePerItem;
 
     @Column(name = "discount")
-    private String discount;
+    private double discount;
 
     @Column(name = "is_product")
     private boolean isProduct;
@@ -28,7 +28,7 @@ public class ProductService {
     public ProductService() {
     }
 
-    public ProductService(String productDescription, String pricePerItem, String discount, boolean isProduct, Vat vat) {
+    public ProductService(String productDescription, double pricePerItem, double discount, boolean isProduct, Vat vat) {
         this.productDescription = productDescription;
         this.pricePerItem = pricePerItem;
         this.discount = discount;
@@ -52,19 +52,19 @@ public class ProductService {
         this.productDescription = productDescription;
     }
 
-    public String getPricePerItem() {
+    public double getPricePerItem() {
         return pricePerItem;
     }
 
-    public void setPricePerItem(String pricePerItem) {
+    public void setPricePerItem(double pricePerItem) {
         this.pricePerItem = pricePerItem;
     }
 
-    public String getDiscount() {
+    public double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(String discount) {
+    public void setDiscount(double discount) {
         this.discount = discount;
     }
 
