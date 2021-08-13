@@ -28,16 +28,16 @@ CREATE TABLE `transactor` (
 	`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
 	`first_name` varchar(40) NOT NULL,
 	`last_name` varchar(40) NOT NULL,
-	`company_name` varchar(40) NOT NULL,
-	`email` varchar(40) NOT NULL,
+	`company_name` varchar(40) DEFAULT NULL,
+	`email` varchar(40) DEFAULT NULL,
 	`tin` bigint(10) NOT NULL,
-	`doy` varchar(20) NOT NULL,
+	`doy` varchar(20) DEFAULT NULL,
 	`address` varchar(50) NOT NULL,
 	`city` varchar(30) NOT NULL,
 	`phone_number` varchar(10) NOT NULL,
 	`postal_code` varchar(10) NOT NULL,
 	`transactor_type` tinyint(1) NOT NULL,
-	`is_abroad` tinyint(1) NOT NULL,
+	`is_abroad` tinyint(1) DEFAULT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
