@@ -12,6 +12,9 @@ public class Transactor{
     @Column(name="id")
     private long id;
 
+    @Column(name="first_name")
+    private String firstName;
+
     @Column(name="last_name")
     private String lastName;
 
@@ -54,7 +57,9 @@ public class Transactor{
     }
 
     //Constructor without id
-    public Transactor(String lastName, String companyName, String email, long tin, String doy, String address, String city, String phoneNumber, String postalCode, boolean transactorType, boolean isAbroad, List<Invoice> invoices) {
+
+    public Transactor(String firstName, String lastName, String companyName, String email, long tin, String doy, String address, String city, String phoneNumber, String postalCode, boolean transactorType, boolean isAbroad, List<Invoice> invoices) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.companyName = companyName;
         this.email = email;
@@ -69,6 +74,7 @@ public class Transactor{
         this.invoices = invoices;
     }
 
+
     //Getters and Setters
 
 
@@ -78,6 +84,14 @@ public class Transactor{
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -177,10 +191,12 @@ public class Transactor{
     }
 
     //toString Method
+
     @Override
     public String toString() {
         return "Transactor{" +
                 "id=" + id +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", companyName='" + companyName + '\'' +
                 ", email='" + email + '\'' +
@@ -192,6 +208,7 @@ public class Transactor{
                 ", postalCode='" + postalCode + '\'' +
                 ", transactorType=" + transactorType +
                 ", isAbroad=" + isAbroad +
+                ", invoices=" + invoices +
                 '}';
     }
 }
