@@ -40,6 +40,17 @@ public class TransactorServiceImpl implements TransactorService {
     }
 
     @Override
+    public Transactor findByTin(long tin) {
+        Transactor result = transactorRepository.findByTin(tin);
+
+        if(result == null) {
+            throw new RuntimeException("Did not found that TIN"+tin);
+        }
+
+        return result;
+    }
+
+    @Override
     public void save(Transactor transactor) {
         transactorRepository.save(transactor);
     }
