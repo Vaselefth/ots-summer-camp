@@ -66,4 +66,12 @@ public class UserRestController {
 
         return "Deleted user's id - " + userId;
     }
+    
+    @PostMapping("/users/auth")
+    public User authenticateUser(@RequestBody AuthInfo authInfo){
+
+        User user = userService.findByUsernameAndPassword(authInfo.getUsername(), authInfo.getPassword());
+
+        return user;
+    }
 }
