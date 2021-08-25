@@ -48,4 +48,16 @@ public class UserServiceImpl implements UserService {
     public void deleteById(long theId) {
         userRepository.deleteById(theId);
     }
+    
+    @Override
+    public User findByUsernameAndPassword(String username, String password) {
+
+        User result = userRepository.findByUsernameAndPassword(username, password);
+
+        if(result == null){
+            throw new RuntimeException("Did not find that user");
+        }
+
+        return result;
+    }
 }
