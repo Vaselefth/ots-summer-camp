@@ -14,4 +14,5 @@ public interface TransactorService {
 
     public void deleteById(long theId);
 
+    public Transactor findByTin(long tin);
 }
