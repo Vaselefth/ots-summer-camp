@@ -38,6 +38,7 @@ CREATE TABLE `transactor` (
 	`postal_code` varchar(10) NOT NULL,
 	`transactor_type` tinyint(1) NOT NULL,
 	`is_abroad` tinyint(1) DEFAULT NULL,
+	UNIQUE (`tin`),
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
