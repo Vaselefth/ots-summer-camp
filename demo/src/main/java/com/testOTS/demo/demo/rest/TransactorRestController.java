@@ -39,6 +39,18 @@ public class TransactorRestController {
         return theTransactor;
     }
 
+    @GetMapping("/transactors/tin/{transactorTin}")
+    public Transactor getTransactorTin(@PathVariable long transactorTin) {
+
+        Transactor transactor = transactorService.findByTin(transactorTin);
+
+        if(transactor == null) {
+            throw new RuntimeException("Transactor not found");
+        }
+
+        return transactor;
+    }
+
     // add mapping for POST /transactors - add new transactor
 
     @PostMapping("/transactors")
